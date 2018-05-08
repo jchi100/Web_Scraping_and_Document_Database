@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Mission to Mars</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+    .mysummarystyle {
+    font-size: 25px;
+    font-weight: bold;   
+}
+.mytextstyle {
+    font-size: 20px;
+    font-weight: bold;
+}
+.myheaderstyle {
+    font-size: 45px;
+    font-weight: bold;
+}
+.mycaption {
+    font-size: 18px;
+    font-weight: bold;
+    text-align:center;
+}
+.myfont {
+    font-size: 15px;
+    font-family: "Times New Roman", Times, serif;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+<div class='myfont'>
+
+<div class="jumbotron text-center">
+<div class='myheaderstyle'>Mission to Mars</div>
+<p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+</div>
+
+<!-- Current News about Mars -->
+<div class="row" id="mars-news">
+<div class="col-md-12">
+<div>
+<div class=" mysummarystyle">
+Latest Mars News </div>
+<h4 class="media-heading"><u>{{mars.news_title}}</u></h4>
+<p>{{mars.news_paragraph}}</p>
+</div>
+</div>
+</div>
+
+
+<!-- Mars Featured Image -->
+<div class="row" id="mars-featured-image">
+<div class="col-md-8">
+ <div class = 'mysummarystyle'>Featured Mars Image</div>
+<img src="{{mars.featured_img}}" class="img-responsive"
+alt="Responsive image">
+</div>
+
+
+<div class="col-md-4">
+<!-- Mars' Current Weather -->
+<div class="row" id="mars-weather">
+<div class="col-md-12">
+
+<div class="panel panel-default">
+<div class="panel-body">
+    <div class='mytextstyle'>Current Weather on Mars</div>
+<p>{{mars.current_weather}}</p>
+</div>
+</div>
+
+
+</div>
+</div>
+
+<!-- Mars Facts -->
+<div class="row" id="mars-facts">
+<div class="col-md-12">
+<div class='mytextstyle'>Mars Facts</div>
+{{mars.mars_fact | safe}}
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+<!-- Mars Hemispheres -->
+<div class="row"  style="margin-top:80px;">
+
+<div class="page-header">
+<div class="text-center  mysummarystyle">Mars Hemispheres</div>
+</div>
+
+
+{% for hemisphere in mars.hemisphere_images %}
+<div class="col-md-6">
+<div class="thumbnail">
+<img src="{{hemisphere.img_url}}"
+alt="">
+<div class="mycaption">
+    {{hemisphere.title}}
+</div>
+</div>
+</div>
+{% endfor %}
+
+</div>
+
+</div>
+</div>
+</body>
+
+</html>
+
+
