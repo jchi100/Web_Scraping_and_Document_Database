@@ -2,7 +2,7 @@
 
 The project is to build a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page.
 
-Scraping (mission_to_mars.py):
+Scraping (scrapemars.py):
 Use Jupyter Notebook, BeautifulSoup, Pandas, and Requests/Splinter.
 
 Data Source for scraping:
