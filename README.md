@@ -2,7 +2,7 @@
 
 The project is to build a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page.
 
-Scraping (scrapemars.py):
+Scraping (scrape_mars.py):
 Use Jupyter Notebook, BeautifulSoup, Pandas, and Requests/Splinter.
 
 Data Source for scraping:
@@ -14,7 +14,9 @@ On the USGS Astrogeology site https://astrogeology.usgs.gov/search/results?q=hem
 
 The scraped data is stored in MongoDB
 
+app.py is for retrieving data from MongoDB and putting the result to index.html.
+
 index.html on templates folder is for rendering the scraping results.
 
-Tools: BeautifulSoup, Pandas, and Requests/Splinter, Pymongo, Bootstrap
+Tools: BeautifulSoup, Pandas, and Requests/Splinter, Pymongo, Bootstrap, Flask
 
